@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.2] - 2026-02-17
+
+### Changed
+- Removed `Requires Plugins` header to allow independent plugin management
+- Added dependency checks with admin notice instead of hard requirement
+- Plugin now gracefully handles missing Etch or ACPT plugins
+
+### Fixed
+- Plugin will no longer force Etch to remain active
+- Added safety checks to prevent errors if dependencies are deactivated
+
 ## [1.0.1] - 2026-02-17
 
 ### Fixed
