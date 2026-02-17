@@ -2,9 +2,8 @@
 /**
  * Plugin Name: Etch ACPT Integration
  * Description: Adds backward compatibility for ACPT's etch/add_dynamic_data filter hook
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: James Welbes
- * Requires Plugins: etch, advanced-custom-post-type
  */
 
 namespace EtchACPT;
@@ -21,6 +20,7 @@ class Integration {
 	 */
 	public static function init() {
 		// Add the legacy filter hook that ACPT expects
+		// These hooks will simply do nothing if Etch isn't active - no errors
 		add_filter( 'etch/dynamic_data/post', [ __CLASS__, 'add_legacy_filter_for_posts' ], 5, 2 );
 		add_filter( 'etch/dynamic_data/user', [ __CLASS__, 'add_legacy_filter_for_users' ], 5, 2 );
 		add_filter( 'etch/dynamic_data/term', [ __CLASS__, 'add_legacy_filter_for_terms' ], 5, 3 );
